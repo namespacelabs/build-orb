@@ -1,6 +1,6 @@
 # build-orb
 
-Orb for CircleCI to speed up builds with Namespace's Remote Builders
+Orb for CircleCI to acelerate builds with Namespace's Remote Builders.
 
 ## Example
 
