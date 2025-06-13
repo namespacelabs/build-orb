@@ -1,0 +1,16 @@
+description: >
+  This command configures access to Namespace Remote Builders.
+parameters:
+  to:
+    type: string
+    default: "World"
+    description: "Hello to whom?"
+steps:
+  - run:
+      name: Configure access to Namespace
+      command: <<include(scripts/setup.sh)>>
+
+  - run:
+      name: Set up Remote Builders
+      command: |
+        nsc docker buildx setup --background --use
