@@ -1,0 +1,19 @@
+version: 2.1
+setup: true
+orbs:
+  namespace: namespacelabs/build@0.1.0
+
+jobs:
+  testbuild:
+    steps:
+      - checkout
+      - namespace/setup
+      - run:
+          name: docker build
+          working_directory: testdata
+          command: docker buildx build .
+
+workflows:
+  testprod:
+    jobs:
+      - testbuild
