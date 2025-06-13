@@ -1,5 +1,10 @@
 description: >
   This command sets up Docker to use Namespace Remote Builders.
+parameters:
+  use_as_default:
+    type: boolean
+    default: false
+    description: "Whether to set Namespace's builder as default."
 steps:
   - run:
       name: Configure access to Namespace
@@ -7,5 +12,4 @@ steps:
 
   - run:
       name: Set up Docker Buildx w/ Namespace Builder
-      command: |
-        nsc docker buildx setup --use --log_actions
+      command: <<include(scripts/setup_builder.sh)>>
