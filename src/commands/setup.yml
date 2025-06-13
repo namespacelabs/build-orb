@@ -1,16 +1,11 @@
 description: >
-  This command configures access to Namespace Remote Builders.
-parameters:
-  to:
-    type: string
-    default: "World"
-    description: "Hello to whom?"
+  This command sets up Docker to use Namespace Remote Builders.
 steps:
   - run:
       name: Configure access to Namespace
       command: <<include(scripts/setup.sh)>>
 
   - run:
-      name: Set up Remote Builders
+      name: Set up Docker Buildx w/ Namespace Builder
       command: |
-        nsc docker buildx setup --background --use
+        nsc docker buildx setup --use
