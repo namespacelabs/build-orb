@@ -8,4 +8,4 @@ steps:
   - run:
       name: Set up Docker Buildx w/ Namespace Builder
       command: |
-        nsc docker buildx setup --use
+        nsc docker buildx setup --use --log_actions

@@ -1,6 +1,6 @@
 # build-orb
 
-Orb for CircleCI to acelerate builds with Namespace's Remote Builders.
+Acelerate Docker builds with Namespace's Remote Builders.
 
 ## Example
 
