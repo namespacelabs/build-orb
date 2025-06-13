@@ -13,4 +13,4 @@ usage:
         - run:
             name: Build Docker image
             command: |
-              docker build .
+              docker buildx build .

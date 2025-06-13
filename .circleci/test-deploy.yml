@@ -29,6 +29,10 @@ jobs:
       - checkout
       # Run your orb's commands to validate them.
       - build/setup
+      - run:
+          name: docker build
+          working_directory: testdata
+          command: docker buildx build .
 workflows:
   test-deploy:
     jobs:
