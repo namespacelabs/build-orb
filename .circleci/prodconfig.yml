@@ -4,7 +4,7 @@ orbs:
   namespace: namespacelabs/build@0.2.0
 
 jobs:
-  testbuild:
+  build_amd64:
     machine:
       image: ubuntu-2204:2024.08.1
       resource_class: arm.medium
@@ -15,9 +15,23 @@ jobs:
       - run:
           name: docker build
           working_directory: testdata
-          command: docker buildx build --builder namespace --platform linux/amd64,linux/arm64 .
+          command: docker buildx build --builder namespace --platform linux/amd64 .
+
+  build_arm64:
+    machine:
+      image: ubuntu-2204:2024.08.1
+      resource_class: arm.medium
+      docker_layer_caching: false
+    steps:
+      - checkout
+      - namespace/setup
+      - run:
+          name: docker build
+          working_directory: testdata
+          command: docker buildx build --builder namespace --platform linux/arm64 .
 
 workflows:
   testprod:
     jobs:
-      - testbuild
+      - build_amd64
+      - build_arm64
