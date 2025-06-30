@@ -12,4 +12,7 @@ steps:
 
   - run:
       name: Set up Docker Buildx w/ Namespace Builder
+      environment:
+        BUILDER_NAME: <<parameters.name>>
+        BUILDER_EXPERIMENTAL: <<parameters.experimental>>
       command: <<include(scripts/setup_builder.sh)>>
