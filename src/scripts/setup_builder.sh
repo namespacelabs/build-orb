@@ -9,12 +9,12 @@ if [ "<< parameters.use_as_default >>" = "true" ]; then
     CMD="$CMD --use"
 fi
 
-if [ -n "$BUILDER_NAME" ]; then
-    CMD="$CMD --tag $BUILDER_NAME"
+if [ -n "<< parameters.builder_name >>" ]; then
+    CMD="$CMD --tag << parameters.builder_name >>"
 fi
 
-if [ -n "$BUILDER_EXPERIMENTAL" ]; then
-    CMD="$CMD --experimental $BUILDER_EXPERIMENTAL"
+if [ -n "<< parameters.experimental >>" ]; then
+    CMD="$CMD --experimental << parameters.experimental >>"
 fi
 
 $CMD

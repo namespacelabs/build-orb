@@ -5,17 +5,6 @@ description: >
 
   Namespace offers high-performance, multi-platform builds that scale-out, and provide built-in observability.
 
-parameters:
-  name:
-    type: string
-    description: "The name of the builder configuration to be configured."
-    default: ""
-
-  experimental:
-    type: string
-    description: "A set of experimental configurations passed to builder configuration."
-    default: ""
-
 display:
   home_url: "https://namespace.so/docs/features/faster-builds"
   source_url: "https://github.com/namespacelabs/build-orb"
