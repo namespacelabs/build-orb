@@ -6,12 +6,12 @@ Acelerate Docker builds with Namespace's Remote Builders.
 
 ```yaml
   orbs:
-    build: namespacelabs/build@0.0.1
+    namespace: namespacelabs/build@0.2.3
  
   jobs:
     build:
       steps:
-        - build/setup
+        - namespace/setup
         - run:
             name: Build Docker image
             command: |
