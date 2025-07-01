@@ -21,6 +21,7 @@ steps:
   - run:
       name: Set up Docker Buildx w/ Namespace Builder
       environment:
+        BUILDER_USE_AS_DEFAULT: <<parameters.use_as_default>>
         BUILDER_NAME: <<parameters.builder_name>>
         BUILDER_EXPERIMENTAL: <<parameters.experimental>>
       command: <<include(scripts/setup_builder.sh)>>
