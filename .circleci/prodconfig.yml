@@ -1,7 +1,7 @@
 version: 2.1
 setup: true
 orbs:
-  namespace: namespacelabs/build@0.2.1
+  namespace: namespacelabs/build@0.2.3
 
 jobs:
   build_amd64:
