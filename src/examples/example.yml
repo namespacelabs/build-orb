@@ -2,7 +2,7 @@ description: Basic usage of the build-orb
 usage:
   version: 2.1
   orbs:
-    build: namespacelabs/build@0.2.3
+    build: namespacelabs/build@0.2.4
 
   jobs:
     build:
